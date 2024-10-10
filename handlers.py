@@ -2,16 +2,19 @@ from aiogram import Bot, Dispatcher, F, Router
 from aiogram.types import Message
 from aiogram.filters import CommandStart
 import keyboards as kb
+import os
+from dotenv import load_dotenv
 import requests
 from datetime import datetime
 import locale
+load_dotenv()
 
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 
 router = Router()
 user_city_selection = {}
-WEATHER_TOKEN = "7aa1ed23e893c6d7558cd7395df7a9ec"
-API_URL = "https://api.openweathermap.org/data/2.5/forecast"
+WEATHER_TOKEN = os.getenv("WEATHER_TOKEN")
+API_URL = os.getenv("API_URL")
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
