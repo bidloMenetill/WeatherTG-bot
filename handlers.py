@@ -9,7 +9,7 @@ from datetime import datetime
 import locale
 load_dotenv()
 
-locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
+locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
 
 router = Router()
 user_city_selection = {}
